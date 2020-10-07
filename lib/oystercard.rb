@@ -11,4 +11,9 @@ class Oystercard
     raise "Top-up failed. Balance limit of #{BALANCE_LIMIT} exceeded." if @balance + added_balance > BALANCE_LIMIT
     @balance += added_balance
   end
+
+  def deduct(deducted_balance)
+    @balance -= deducted_balance
+  end
+
 end

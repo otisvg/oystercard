@@ -15,4 +15,10 @@ describe Oystercard do
     subject.top_up(balance_limit)
     expect{ subject.top_up(1) }.to raise_error(RuntimeError, "Top-up failed. Balance limit of #{balance_limit} exceeded.")
   end
+
+  it 'deducts from the balance' do
+    subject.top_up(20)
+    subject.deduct(10)
+    expect(subject.balance).to eq 10
+  end
 end
