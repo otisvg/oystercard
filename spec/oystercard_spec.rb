@@ -21,4 +21,21 @@ describe Oystercard do
     subject.deduct(10)
     expect(subject.balance).to eq 10
   end
+
+  it '#touch_in returns true when touching in' do
+    expect(subject.touch_in).to eq true
+  end
+
+  it '#touch_out returns false when touching out' do
+    expect(subject.touch_out).to eq false
+  end
+
+  it '#in_journey lets us know if we are in journey when we have touched in' do
+    subject.touch_in
+    expect(subject.in_journey?).to eq true
+  end
+  it '#in_journey lets us know if we are in journey when we have touched out' do
+    subject.touch_out
+    expect(subject.in_journey?).to eq false
+  end
 end
