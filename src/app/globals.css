@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f6f3ec;
+  --surface: #ffffff;
+  --surface-2: #efeae0;
+  --ink: #1b2a28;
+  --muted: #5d6b68;
+  --line: #e2dccf;
+  --brand: #0e6b5f;
+  --brand-ink: #ffffff;
+  --brand-soft: #dcefe9;
+  --gold: #b07d2b;
+  --gold-soft: #f5ead6;
+  --danger: #b4423a;
+  --danger-soft: #f8e3e0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1513;
+    --surface: #16201e;
+    --surface-2: #1d2a27;
+    --ink: #e6eeeb;
+    --muted: #9aaaa6;
+    --line: #2a3835;
+    --brand: #4cc3ae;
+    --brand-ink: #062420;
+    --brand-soft: #173a34;
+    --gold: #e0b267;
+    --gold-soft: #3a2f1c;
+    --danger: #ef8a80;
+    --danger-soft: #3b1f1c;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-soft: var(--brand-soft);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-arabic: "Geeza Pro", "Noto Naskh Arabic", "Amiri", "Traditional Arabic", serif;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+.font-arabic {
+  font-family: var(--font-arabic);
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
